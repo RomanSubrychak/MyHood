@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940622051FF1342D0071DFCA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940622041FF1342D0071DFCA /* DetailsViewController.swift */; };
 		945C81B11FEFFEDC006B45A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C81B01FEFFEDC006B45A3 /* AppDelegate.swift */; };
 		945C81B31FEFFEDC006B45A3 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C81B21FEFFEDC006B45A3 /* PostViewController.swift */; };
 		945C81B61FEFFEDC006B45A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945C81B41FEFFEDC006B45A3 /* Main.storyboard */; };
@@ -14,9 +15,12 @@
 		945C81BB1FEFFEDC006B45A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945C81B91FEFFEDC006B45A3 /* LaunchScreen.storyboard */; };
 		945C81C41FEFFFA8006B45A3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C81C31FEFFFA8006B45A3 /* Post.swift */; };
 		945C81C71FF00D6D006B45A3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C81C61FF00D6D006B45A3 /* PostCell.swift */; };
+		945C81CA1FF0139E006B45A3 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C81C91FF0139E006B45A3 /* AddPostVC.swift */; };
+		9464E63B1FF0852D0024B382 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464E63A1FF0852D0024B382 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		940622041FF1342D0071DFCA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		945C81AD1FEFFEDC006B45A3 /* MyHood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945C81B01FEFFEDC006B45A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		945C81B21FEFFEDC006B45A3 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		945C81BC1FEFFEDC006B45A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945C81C31FEFFFA8006B45A3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		945C81C61FF00D6D006B45A3 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		945C81C91FF0139E006B45A3 /* AddPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		9464E63A1FF0852D0024B382 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940621FF1FF133790071DFCA /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				945C81C81FF01365006B45A3 /* Controller */,
+				945C81C51FF00D40006B45A3 /* View */,
+			);
+			path = AddPost;
+			sourceTree = "<group>";
+		};
+		940622001FF133BE0071DFCA /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				940622011FF133C70071DFCA /* Conroller */,
+			);
+			path = PostsList;
+			sourceTree = "<group>";
+		};
+		940622011FF133C70071DFCA /* Conroller */ = {
+			isa = PBXGroup;
+			children = (
+				945C81B21FEFFEDC006B45A3 /* PostViewController.swift */,
+			);
+			path = Conroller;
+			sourceTree = "<group>";
+		};
+		940622021FF133EA0071DFCA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				940622031FF134120071DFCA /* Controller */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		940622031FF134120071DFCA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				940622041FF1342D0071DFCA /* DetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		945C81A41FEFFEDC006B45A3 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +105,12 @@
 		945C81AF1FEFFEDC006B45A3 /* MyHood */ = {
 			isa = PBXGroup;
 			children = (
+				940622021FF133EA0071DFCA /* Details */,
+				940622001FF133BE0071DFCA /* PostsList */,
 				945C81C21FEFFF83006B45A3 /* Model */,
-				945C81C51FF00D40006B45A3 /* View */,
+				9464E6391FF0851A0024B382 /* DataService */,
+				940621FF1FF133790071DFCA /* AddPost */,
 				945C81B01FEFFEDC006B45A3 /* AppDelegate.swift */,
-				945C81B21FEFFEDC006B45A3 /* PostViewController.swift */,
 				945C81B41FEFFEDC006B45A3 /* Main.storyboard */,
 				945C81B71FEFFEDC006B45A3 /* Assets.xcassets */,
 				945C81B91FEFFEDC006B45A3 /* LaunchScreen.storyboard */,
@@ -84,6 +133,22 @@
 				945C81C61FF00D6D006B45A3 /* PostCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		945C81C81FF01365006B45A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				945C81C91FF0139E006B45A3 /* AddPostVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9464E6391FF0851A0024B382 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				9464E63A1FF0852D0024B382 /* DataService.swift */,
+			);
+			path = DataService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +225,9 @@
 			files = (
 				945C81C41FEFFFA8006B45A3 /* Post.swift in Sources */,
 				945C81B31FEFFEDC006B45A3 /* PostViewController.swift in Sources */,
+				945C81CA1FF0139E006B45A3 /* AddPostVC.swift in Sources */,
+				9464E63B1FF0852D0024B382 /* DataService.swift in Sources */,
+				940622051FF1342D0071DFCA /* DetailsViewController.swift in Sources */,
 				945C81B11FEFFEDC006B45A3 /* AppDelegate.swift in Sources */,
 				945C81C71FF00D6D006B45A3 /* PostCell.swift in Sources */,
 			);
@@ -235,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -286,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -299,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = MyHood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = romanSubrychak.MyHood;
@@ -313,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = MyHood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = romanSubrychak.MyHood;

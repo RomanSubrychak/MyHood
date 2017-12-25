@@ -19,17 +19,12 @@ class PostViewController: UIViewController {
 
 		tableView.dataSource = self
 		
-		let post = Post(imagePath: "", title: "Post 1",
-		                postDescription: "Post 1 Description")
-		let post2 = Post(imagePath: "", title: "Post 2",
-		                 postDescription: "I am the second post. Yipeee!")
-		let post3 = Post(imagePath: "", title: "Post 3",
-		                 postDescription: "I am the most important post.")
+		DataService.instance.loadPosts()
 		
-		posts.append(post)
-		posts.append(post2)
-		posts.append(post3)
-		
+		NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.onPostsLoaded(_:)), name: Notification.Name(rawValue: "postsLoaded"), object: nil)
+	}
+	
+	@objc func onPostsLoaded(_ notification: Notification) {
 		tableView.reloadData()
 	}
 }
@@ -39,12 +34,12 @@ extension PostViewController: UITableViewDataSource {
 	
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return posts.count
+		return DataService.instance.loadedPosts.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let post = posts[indexPath.row]
+		let post = DataService.instance.loadedPosts[indexPath.row]
 		
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell else {
 			return PostCell()
@@ -53,5 +48,16 @@ extension PostViewController: UITableViewDataSource {
 		cell.configureCell(post)
 		
 		return cell
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		guard  let identifier = segue.identifier, identifier == "details",
+		let index = tableView.indexPathForSelectedRow?.row
+		else { return }
+		
+		if let destinationVC = segue.destination as? DetailsViewController {
+			let post = DataService.instance.loadedPosts[index]
+			destinationVC.post = post
+		}
 	}
 }
